@@ -121,7 +121,7 @@ func (m *Message) toBytes(buf *bytes.Buffer) (messageBytes []byte, err error) {
 	return messageBytes, nil
 }
 
-func constructMessage(p []byte, hostname string, facility string, file string, line int) (m *Message) {
+func constructMessage(p []byte, hostname string, facility string, file string, line int, env string) (m *Message) {
 	// remove trailing and leading whitespace
 	p = bytes.TrimSpace(p)
 
@@ -147,6 +147,7 @@ func constructMessage(p []byte, hostname string, facility string, file string, l
 		Extra: map[string]interface{}{
 			"_file": file,
 			"_line": line,
+			"_env": env
 		},
 	}
 

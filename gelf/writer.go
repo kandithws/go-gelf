@@ -22,6 +22,7 @@ type GelfWriter struct {
 	conn     net.Conn
 	Hostname string
 	Facility string // defaults to current process name
+	Env      string // TODO -- change to ExtraMetadata
 	proto    string
 }
 
