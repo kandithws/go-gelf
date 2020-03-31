@@ -20,7 +20,7 @@ type Writer interface {
 type GelfWriter struct {
 	addr     string
 	conn     net.Conn
-	hostname string
+	Hostname string
 	Facility string // defaults to current process name
 	proto    string
 }
